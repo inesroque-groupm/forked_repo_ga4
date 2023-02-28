@@ -6,7 +6,7 @@ constant: GA4_CONNECTION {
 }
 
 constant: GA4_SCHEMA {
-  value: "adh-demo-data-review.analytics_213025502"
+  value: "gcp-portugal-sandbox.ga4_sample_data_2"
   export: override_optional
 }
 
