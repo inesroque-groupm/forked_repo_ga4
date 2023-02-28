@@ -1,7 +1,7 @@
 
 ## Connection Constants:
 constant: GA4_CONNECTION {
-  value: "looker-demos"
+  value: "ga4_sandbox"
   export: override_required
 }
 
