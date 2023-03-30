@@ -506,7 +506,7 @@
   - name: Campaign Date
     title: Campaign Date
     type: field_filter
-    default_value: 30 day
+    default_value: 2021
     allow_multiple_values: true
     required: false
     ui_config:
