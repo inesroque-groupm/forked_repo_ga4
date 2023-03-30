@@ -303,13 +303,13 @@ view: events {
     group_item_label: "Browser Version"
   }
 
-  dimension: device__web_info__hostname {
-    type: string
-    sql: ${TABLE}.device.web_info.hostname ;;
-    full_suggestions: yes
-    group_label: "Device Web Info"
-    group_item_label: "Hostname"
-  }
+  # dimension: device__web_info__hostname {
+  #   type: string
+  #   sql: ${TABLE}.device.web_info.hostname ;;
+  #   full_suggestions: yes
+  #   group_label: "Device Web Info"
+  #   group_item_label: "Hostname"
+  # }
 
 
   ## ECommerce Fields
@@ -701,7 +701,7 @@ view: events {
       traffic_source__name,
       device__mobile_model_name,
       device__mobile_brand_name,
-      device__web_info__hostname,
+      # device__web_info__hostname,
       event_dimensions__hostname,
       device__mobile_marketing_name
     ]

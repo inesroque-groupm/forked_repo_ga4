@@ -102,7 +102,7 @@ device_geo as (
       ,  sl.device.is_limited_ad_tracking device__is_limited_ad_tracking
       ,  sl.device.web_info.browser device__web_info_browser
       ,  sl.device.web_info.browser_version device__web_info_browser_version
-      ,  sl.device.web_info.hostname device__web_info_hostname
+      # ,  sl.device.web_info.hostname device__web_info_hostname
       ,  case when sl.device.category = 'mobile' then true else false end as device__is_mobile
       ,  sl.geo.continent geo__continent
       ,  sl.geo.country geo__country
@@ -187,7 +187,7 @@ select se.session_date session_date
                       ,  d.device__is_limited_ad_tracking
                       ,  d.device__web_info_browser
                       ,  d.device__web_info_browser_version
-                      ,  d.device__web_info_hostname
+                      # ,  d.device__web_info_hostname
                       ,  d.device__is_mobile) device_data
     ,  (SELECT AS STRUCT d.geo__continent
                       ,  d.geo__country
@@ -437,7 +437,7 @@ extends: [event_funnel, page_funnel]
       label: "Channel"
       description: "Default Channel Grouping as defined in https://support.google.com/analytics/answer/9756891?hl=en"
       ## UPDATED: 2022-07-27
-      sql: 
+      sql:
     case
       -- DIRECT
       when ${session_attribution_source} = '(direct)'
@@ -764,15 +764,15 @@ extends: [event_funnel, page_funnel]
       type: string
       sql: ${device_data}.device__web_info_browser_version ;;
     }
-    dimension: device_data_web_info_hostname {
-      #group_label: "Device"
-      view_label: "Behavior"
-      group_label: "Pages"
-      label: "Hostname"
-      description: "The hostname from which the tracking request was made."
-      type: string
-      sql: ${device_data}.device__web_info_hostname ;;
-    }
+    # dimension: device_data_web_info_hostname {
+    #   #group_label: "Device"
+    #   view_label: "Behavior"
+    #   group_label: "Pages"
+    #   label: "Hostname"
+    #   description: "The hostname from which the tracking request was made."
+    #   type: string
+    #   sql: ${device_data}.device__web_info_hostname ;;
+    # }
     dimension: device_is_mobile {
       group_label: "Device"
       label: "Is Mobile?"
@@ -833,9 +833,9 @@ extends: [event_funnel, page_funnel]
       sql: ${geo_data}.geo__region ;;
       map_layer_name: us_states
     }
-    
+
   # ## GA4 BQML fields ##
-  
+
   # parameter: prediction_window_days {
   #   view_label: "BQML"
   #   type: number
