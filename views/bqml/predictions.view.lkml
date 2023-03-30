@@ -17,7 +17,7 @@ view: training_input {
       column: will_purchase_in_future {}
       filters: {
         field: sessions.session_date
-        value: "730 days ago for 90 days"
+        value: "760 days ago for 90 days"
       }
       filters: {
         field: sessions.prediction_window_days
@@ -43,7 +43,7 @@ view: testing_input {
       column: will_purchase_in_future {}
       filters: {
         field: sessions.session_date
-        value: "700 days ago for 90 days"
+        value: "730 days ago for 90 days"
       }
       filters: {
         field: sessions.prediction_window_days
